@@ -17,6 +17,9 @@
 
 #define NUM_FRAMES 250
 
+static const int NUM_COLORS = 4;
+static const int COLORS[] = {0xB7C4CF, 0xEEE3CB, 0xD7C0AE, 0x967E76};
+
 struct Ball
 {
     int x, y;
@@ -32,7 +35,7 @@ void initialize_random_balls(struct Ball *balls)
         balls[i].y = (rand() % (HEIGHT - PADDING * 2)) + PADDING;
         balls[i].dx = (rand() % (MAX_VELOCITY_COMPONENT * 2)) - MAX_VELOCITY_COMPONENT;
         balls[i].dy = (rand() % (MAX_VELOCITY_COMPONENT * 2)) - MAX_VELOCITY_COMPONENT;
-        balls[i].color = rand() & 0xFFFFFF;
+        balls[i].color = COLORS[rand() % NUM_COLORS];
     }
 }
 
