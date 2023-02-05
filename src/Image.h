@@ -27,8 +27,6 @@ void ImageCreate(struct Image *img, int w, int h, int c);
 void ImageSave(const struct Image *img, const char *filename);
 void ImageFree(struct Image *img);
 
-void ImageRect(struct Image *img, int x, int y, int w, int h, int color);
-void ImageSquare(struct Image *img, int x, int y, int s, int color);
 void ImagePixel(struct Image *img, int x, int y, int color);
 
 #endif
